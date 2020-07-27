@@ -29,7 +29,7 @@ app.get("/pagar",async (req, res) =>{
         payer:{
             email: emailPagador
         },
-        extern_reference: id
+        external_reference: id
     }
 
     try{
@@ -54,7 +54,14 @@ app.post("/not",(req,res) =>{
         MercadoPago.payment.search({
             qs: filtro
         }).then( data => {
-            console.log(data);
+            var pagamento = data.body.results[0];
+
+            if(pagamento != undefined){
+                console.log(pagamento);
+            }else{
+                console.log("pagamento nao existe")
+            }
+
         }).catch(err => {
             console.log(err);
         });

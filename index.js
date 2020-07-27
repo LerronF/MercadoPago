@@ -43,7 +43,7 @@ app.get("/pagar",async (req, res) =>{
 });
 
 app.post("/not",(req,res) =>{
-    console.log(req.query);
+    console.log(req.query.id);
 
     setTimeout(() => {
         
@@ -54,7 +54,7 @@ app.post("/not",(req,res) =>{
         MercadoPago.payment.search({
             qs: filtro
         }).then( data => {
-            console.lod(data);
+            console.log(data);
         }).catch(err => {
             console.log(err);
         });
@@ -62,7 +62,7 @@ app.post("/not",(req,res) =>{
     }, 20000);
 
     res.send("OK");
-})
+});
 
 
 app.listen(80,(req,res) => {

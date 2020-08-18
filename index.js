@@ -14,7 +14,7 @@ app.get("/",(req,res) =>{
 app.get("/pagar",async (req, res) =>{
 
     var id = ""+Date.now();
-    var emailPagador="lerron.jesus@itriad.org.br";
+    var emailPagador="lerron@itriad.org.br";
 
     var dados = {
         items:[
